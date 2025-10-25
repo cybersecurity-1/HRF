@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
+
+/* Prevent flickering and improve visual stability */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Smooth image loading */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Prevent layout shifts */
+.aspect-\[4\/3\] {
+  aspect-ratio: 4 / 3;
+}
+
+/* Optimize transitions */
+.transition-opacity {
+  transition: opacity 0.15s ease-out;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease-out;
+}
+
+/* Prevent hover flickering */
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1 !important;
+}
+
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05) !important;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

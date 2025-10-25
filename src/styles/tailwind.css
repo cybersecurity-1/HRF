@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #FAFAFA; /* warm off-white */
+    --color-foreground: #0F172A; /* near-black with warmth */
+    --color-border: #E2E8F0; /* light gray for functional separation */
+    --color-input: #FFFFFF; /* pure white for form inputs */
+    --color-ring: #1E40AF; /* deep professional blue for focus rings */
+    
+    /* Card and Surface Colors */
+    --color-card: #FFFFFF; /* pure white for content cards */
+    --color-card-foreground: #0F172A; /* near-black text on cards */
+    --color-popover: #FFFFFF; /* pure white for popovers */
+    --color-popover-foreground: #0F172A; /* near-black text in popovers */
+    
+    /* Muted Colors */
+    --color-muted: #F1F5F9; /* light gray background for muted sections */
+    --color-muted-foreground: #475569; /* medium gray for supporting text */
+    
+    /* Brand Colors */
+    --color-primary: #1E40AF; /* deep professional blue */
+    --color-primary-foreground: #FFFFFF; /* white text on primary */
+    --color-secondary: #64748B; /* sophisticated slate gray */
+    --color-secondary-foreground: #FFFFFF; /* white text on secondary */
+    
+    /* Accent Colors */
+    --color-accent: #EA580C; /* strategic orange for CTAs */
+    --color-accent-foreground: #FFFFFF; /* white text on accent */
+    
+    /* State Colors */
+    --color-destructive: #DC2626; /* clear red for errors */
+    --color-destructive-foreground: #FFFFFF; /* white text on destructive */
+    --color-success: #059669; /* professional green for confirmations */
+    --color-success-foreground: #FFFFFF; /* white text on success */
+    --color-warning: #D97706; /* amber for important notices */
+    --color-warning-foreground: #FFFFFF; /* white text on warning */
+    --color-error: #DC2626; /* clear red for error states */
+    --color-error-foreground: #FFFFFF; /* white text on error */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Performance optimizations for smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Optimize images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent layout shifts */
+  .aspect-\[4\/3\] {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Shadow System */
+  .shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Performance optimized blur effects */
+  .blur-xl {
+    filter: blur(12px);
+    will-change: filter;
+  }
+
+  .blur-2xl {
+    filter: blur(16px);
+    will-change: filter;
+  }
+
+  /* Optimized backdrop blur */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    will-change: backdrop-filter;
+  }
+
+  /* Smooth transitions for better performance */
+  .transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+  }
+
+  .transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Prevent flickering on hover */
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+
+  .group:hover .group-hover\:scale-105 {
+    transform: scale(1.05);
+  }
+
+  /* Optimize image loading */
+  .image-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-placeholder {
+    position: absolute;
+    inset: 0;
+    background-color: #f3f4f6;
+    border-radius: inherit;
+  }
+}
