@@ -33,7 +33,11 @@ const Header = () => {
           {/* Logo Section */}
           <Link to="/homepage" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
             <div className="flex items-center justify-center w-14 h-14  rounded-lg">
-              <img src="/assets/images/eagle-removebg-preview.png" alt="Eagle Logo" width={100} height={100} />
+              <img
+                src="/public/assets/images/eagle-removebg-preview.png"
+                alt="HRF Industrial Roofing Logo"
+                className="w-20 h-20 object-contain"
+              />
             </div>
             <div className="flex flex-col">
   <span className="font-heading font-bold text-lg text-foreground leading-tight">
