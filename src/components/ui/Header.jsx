@@ -34,7 +34,7 @@ const Header = () => {
           <Link to="/homepage" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
             <div className="flex items-center justify-center w-14 h-14  rounded-lg">
               <img
-                src="/public/assets/images/eagle-removebg-preview.png"
+                src="/assets/images/eagle-removebg-preview.png"
                 alt="HRF Industrial Roofing Logo"
                 className="w-20 h-20 object-contain"
               />
