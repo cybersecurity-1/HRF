@@ -6,8 +6,12 @@ import QuoteRequestCTA from '../../../components/ui/QuoteRequestCTA';
 
 const HeroSection = ({ onQuoteRequest }) => {
   const handleQuoteClick = () => {
-    if (onQuoteRequest) {
-      onQuoteRequest();
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   };
 
