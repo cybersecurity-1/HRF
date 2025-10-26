@@ -36,7 +36,7 @@ const Header = () => {
               <img
                 src="/assets/images/eagle-removebg-preview.png"
                 alt="HRF Industrial Roofing Logo"
-                className="w-20 h-20 object-contain"
+                className="w-14 h-14 object-contain"
               />
             </div>
             <div className="flex flex-col">
